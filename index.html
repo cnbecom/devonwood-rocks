@@ -1,5 +1,264 @@
 <!DOCTYPE html>
-<html>
-  <head><title>Devonwood</title></head>
-  <body><h1>Devonwood Rocks!</h1></body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Devonwood · Saturday, October 17</title>
+    <meta name="description" content="This Saturday, October 17, around 4pm at Devonwood: cookout, potluck, and firepit, with live music by The Teardowns.">
+    <meta name="theme-color" content="#f4edd3">
+    <meta property="og:title" content="Devonwood · Saturday, October 17">
+    <meta property="og:description" content="Cookout, potluck, and firepit. Live music by The Teardowns around 4pm.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.devonwood.rocks/">
+    <meta property="og:image" content="https://www.devonwood.rocks/teardowns-logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;0,9..144,650;1,9..144,520&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --paper: #f4edd3;
+        --ink: #2a1810;
+        --rust: #a33b22;
+        --muted: #5c4032;
+        --rule: rgba(42, 24, 16, 0.22);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { height: 100%; }
+
+      body {
+        margin: 0;
+        min-height: 100%;
+        min-height: 100dvh;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px 56px;
+        background:
+          radial-gradient(ellipse 80% 50% at 50% -10%, #9a5330 0%, transparent 55%),
+          linear-gradient(180deg, #4a291c 0%, #24140f 55%, #160e0b 100%);
+        color: var(--ink);
+        font-family: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+      }
+
+      .flyer {
+        width: min(520px, 100%);
+        display: flex;
+        flex-direction: column;
+        background: var(--paper);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow:
+          0 1px 0 rgba(255, 236, 210, 0.25) inset,
+          0 24px 60px rgba(0, 0, 0, 0.38);
+      }
+
+      .sheet {
+        position: relative;
+        padding: 42px 36px 8px;
+        text-align: center;
+      }
+
+      .sheet::before {
+        content: "";
+        position: absolute;
+        inset: 14px 14px 0;
+        border: 1.5px solid var(--rule);
+        border-bottom: 0;
+        pointer-events: none;
+      }
+
+      .place {
+        margin: 0;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 22px 0 0;
+        font-family: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
+        font-weight: 560;
+        font-size: clamp(3.15rem, 11vw, 4.5rem);
+        line-height: 0.86;
+        letter-spacing: -0.03em;
+      }
+
+      .day {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.42em;
+        font-style: italic;
+        font-weight: 520;
+        letter-spacing: 0;
+        line-height: 1;
+      }
+
+      .time {
+        display: block;
+        margin-top: 16px;
+        font-family: "Outfit", "Avenir Next", sans-serif;
+        font-size: 0.22em;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      .rule {
+        width: 52px;
+        height: 1px;
+        margin: 26px auto 22px;
+        background: var(--rust);
+      }
+
+      .lineup {
+        margin: 0;
+        font-family: "Fraunces", Palatino, Georgia, serif;
+        font-weight: 650;
+        font-size: clamp(1.85rem, 6.4vw, 2.45rem);
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+      }
+
+      .lineup em {
+        font-style: italic;
+        font-weight: 520;
+      }
+
+      .firepit {
+        margin: 6px 0 0;
+        font-family: "Fraunces", Palatino, Georgia, serif;
+        font-size: clamp(1.55rem, 5vw, 1.9rem);
+        font-weight: 560;
+        font-style: italic;
+        color: var(--rust);
+        line-height: 1;
+      }
+
+      .music {
+        max-width: 16.5rem;
+        margin: 28px auto 0;
+        font-family: "Fraunces", Palatino, Georgia, serif;
+        font-style: italic;
+        font-weight: 520;
+        font-size: 1.12rem;
+        line-height: 1.35;
+        text-wrap: balance;
+        color: var(--muted);
+      }
+
+      .music-label {
+        display: block;
+        margin-bottom: 6px;
+        font-family: "Outfit", "Avenir Next", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+
+      .logo {
+        display: block;
+        width: calc(100% + 28px);
+        max-width: none;
+        height: auto;
+        margin: -6px -14px -18px;
+      }
+
+      .bring {
+        margin: 4px 0 22px;
+        font-family: "Fraunces", Palatino, Georgia, serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--muted);
+      }
+
+      .stripes {
+        display: grid;
+        grid-template-rows: repeat(5, 8px);
+        margin-top: auto;
+      }
+
+      .stripes span:nth-child(1) { background: #f0c14a; }
+      .stripes span:nth-child(2) { background: #ee8c32; }
+      .stripes span:nth-child(3) { background: #e25c24; }
+      .stripes span:nth-child(4) { background: #c73d22; }
+      .stripes span:nth-child(5) { background: #3e6240; }
+
+      ::selection {
+        background: #e7b15a;
+        color: var(--ink);
+      }
+
+      @media (max-width: 680px) {
+        body {
+          padding: 0;
+          background: var(--paper);
+        }
+
+        .flyer {
+          width: 100%;
+          min-height: 100dvh;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .sheet {
+          padding: 36px 22px 4px;
+        }
+
+        .logo {
+          width: calc(100% + 12px);
+          margin: -4px -6px -12px;
+        }
+      }
+
+      @media print {
+        body {
+          padding: 0;
+          background: white;
+        }
+
+        .flyer {
+          width: 100%;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="flyer">
+      <div class="sheet">
+        <p class="place">Devonwood</p>
+        <h1>
+          <span class="day">This Saturday</span>
+          October 17
+          <span class="time">around 4pm</span>
+        </h1>
+        <div class="rule" aria-hidden="true"></div>
+        <p class="lineup">Cookout <em>&</em> potluck</p>
+        <p class="firepit">Firepit</p>
+        <p class="music">
+          <span class="music-label">Live music</span>
+          by the internationally acclaimed rock band
+        </p>
+        <img class="logo" src="teardowns-logo.jpg" alt="The Teardowns">
+        <p class="bring">Bring a dish to share</p>
+      </div>
+      <div class="stripes" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </article>
+  </body>
 </html>
